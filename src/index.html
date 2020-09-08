@@ -1,0 +1,111 @@
+---
+title: "DummyJk"
+layout: splash
+author_profile: false
+header:
+  overlay_color: "#000"
+  overlay_filter: "0.5"
+  overlay_image: /assets/images/unsplash-intro.jpg
+  actions:
+    - label: "Download"
+      url: "https://github.com/Tergology/jkDummy/"
+  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
+excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+concept:
+  - title: "What's the concept?"
+    excerpt: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Centered with `type="center"`'
+concept_list:
+  - image_path: assets/images/unsplash-gallery-image-1-th.jpg
+    image_caption: "Image courtesy of [Unsplash](https://unsplash.com/)"
+    alt: "concept image 1"
+    title: "Idea 1"
+    excerpt: "This is some sample content that goes here with **Markdown** formatting."
+    url: "#blog"
+    btn_label: "Read More"
+    btn_class: "btn--primary"
+  - image_path: /assets/images/unsplash-gallery-image-2-th.jpg
+    image_caption: "Image courtesy of [Unsplash](https://unsplash.com/)"
+    alt: "concept image 2"
+    title: "Idea 2"
+    excerpt: "This is some sample content that goes here with **Markdown** formatting."
+    url: "#blog"
+    btn_label: "Read More"
+    btn_class: "btn--primary"
+  - image_path: /assets/images/unsplash-gallery-image-3-th.jpg
+    image_caption: "Image courtesy of [Unsplash](https://unsplash.com/)"
+    alt: "concept image 2"
+    title: "Idea 3"
+    excerpt: "This is some sample content that goes here with **Markdown** formatting."
+    url: "#blog"
+    btn_label: "Read More"
+    btn_class: "btn--primary"
+solutions:
+  - title: "What are the solution we propose?"
+    excerpt: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Centered with `type="center"`'
+solutions_list:
+  - image_path: assets/images/unsplash-gallery-image-1-th.jpg
+    image_caption: "Image courtesy of [Unsplash](https://unsplash.com/)"
+    alt: "solution image 1"
+    title: "Product 1"
+    excerpt: "This is some sample content that goes here with **Markdown** formatting."
+    url: "#about"
+    btn_label: "Order"
+    btn_class: "btn--primary"
+  - image_path: /assets/images/unsplash-gallery-image-2-th.jpg
+    image_caption: "Image courtesy of [Unsplash](https://unsplash.com/)"
+    alt: "solution image 2"
+    title: "Product 2"
+    excerpt: "This is some sample content that goes here with **Markdown** formatting."
+    url: "#about"
+    btn_label: "Order"
+    btn_class: "btn--primary"
+  - image_path: /assets/images/unsplash-gallery-image-3-th.jpg
+    image_caption: "Image courtesy of [Unsplash](https://unsplash.com/)"
+    alt: "solution image 3"
+    title: "Product 3"
+    excerpt: "This is some sample content that goes here with **Markdown** formatting."
+    url: "#about"
+    btn_label: "Order"
+    btn_class: "btn--primary"
+blog:
+  - title: "More information about what we do"
+    excerpt: "Find here under a list of the latest articles on the subjects that matter for us."
+about:
+  - image_path: /assets/images/unsplash-about.jpg
+    image_caption: "Image courtesy of [Unsplash](https://unsplash.com/)"
+    alt: "about image"
+    title: "Who are we?"
+    excerpt: "Here comes somthing about us.<br>
+    We'd love to hear from you."
+    url: "mailto:info@example.com"
+    btn_label: "Send"
+    btn_class: "btn--primary"
+---
+<div id="concept">
+{% include feature_row id="concept" type="center" %}
+{% include feature_row id="concept_list" %}
+</div>
+<div id="solutions">
+{% include feature_row id="solutions" type="center" %}
+{% include feature_row id="solutions_list" %}
+</div>
+<div id="blog">
+{% include feature_row id="blog" type="center" %}
+<div class="entries-grid">
+  {% for post in site.posts %}
+  <div class="grid__item">
+    <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+      <div class="archive__item-teaser">
+        <img src="{{post.header.teaser}}" alt="">
+      </div>
+      <h2 class="archive__item-title" itemprop="headline">
+        <a href="{{ post.url }}" rel="permalink">{{ post.title }}</a>
+      </h2>
+      <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt }}</p>
+    </article>
+  </div>
+  {% endfor %}
+</div>
+<div id="about">
+{% include feature_row id="about" type="right" %}
+</div>
